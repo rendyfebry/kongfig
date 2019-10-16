@@ -114,7 +114,6 @@ function getPaginatedJson(uri) {
             if(json.next.indexOf('localhost') > -1) {
                 const uri = `http${process.argv.indexOf("--https") > -1 ? 's' : ''}://${process.argv[process.argv.indexOf("--host")+1]}`;
                 const newNextURL = `${uri}${json.next.substr(json.next.indexOf(json.next.split('/')[3])-1)}`
-                console.log(newNextURL)
                 json.next = newNextURL;
             }
         }
